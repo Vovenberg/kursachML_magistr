@@ -1,7 +1,7 @@
 import math as m
 import cmath as cm
 
-class Yakobi:
+class Jacobi:
 
     C = 1
     W = complex(1, 2)
