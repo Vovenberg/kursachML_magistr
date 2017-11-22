@@ -5,14 +5,19 @@ from jacobi.calculate import Jacobi
 
 
 def runJacobiWithRandomArgs():
-    k = np.random.randint(5, 15)
-    gamma = np.random.random_integers(1, 20, 15)
-    betta = np.random.random_integers(1, 20, 15)
-    resultN = Jacobi().processN(gamma, betta, k)
+    k = 100
+    gamma = np.random.random_integers(1, 20, 100)
+    betta = np.random.random_integers(1, 20, 100)
+    jacobi = Jacobi()
+    resultN = jacobi.processN(gamma, betta, k)
+    resultN0 = jacobi.processN0(gamma, betta)
+    resultN1 = jacobi.processN1(gamma, betta)
     print(f'Step: {k}')
     print(f'Gamma: {gamma}')
     print(f'Betta: {betta}')
     print(f'Res N: {resultN}')
+    print(f'Res N0 {resultN0}')
+    print(f'Res N1 {resultN1}')
     plotStepsN(range(0, k), resultN)
 
 def plotStepsN(steps, n, filename = 'jacobi_plot.png'):
